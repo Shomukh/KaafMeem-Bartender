@@ -10,7 +10,7 @@ Dim lastrow As Long, lastcolumn As Long
 
 lastrow = Sheets("sheet1").Range("A" & Rows.Count).End(xlUp).Row
 lastcolumn = ActiveSheet.Cells(1, Columns.Count).End(xlToLeft).Column
-path = "C:\Users\Shomu\Desktop\T4"
+path = "C:\Users\Shomukh\Desktop\T4"
 
 For p = 1 To lastcolumn
 wsData = ActiveSheet.Cells(1, p).Value
