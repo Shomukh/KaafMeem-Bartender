@@ -8,20 +8,13 @@ class BarTender {
 	private $label_job_count;
 	private $xml;
 
-	/**
-	 * @param string $label A full path (including filename,) to a BarTender Label (*.xxx) file.
-	 * @param string $printer The name of the printer to which the label will be sent to print.
-	 */
+	
 	public function __construct($label, $printer) {
 		$this->setLabel($label);
 		$this->setPrinter($printer);
 	}
 
-	/**
-	 * @param string $printer The name of the printer to which the label will be sent to print.
-	 * @return boolean True on success, Exception thrown on failure
-	 * @throws BarTenderException Thrown when $printer is not a string
-	 */
+
 	public function setPrinter($printer) {
 		if(!is_string($printer)) {
 			throw new BarTenderException('Printer passed must be a string, encountered `' . gettype($printer) . '` instead');
@@ -30,11 +23,7 @@ class BarTender {
 		return True;
 	}
 
-	/**
-	 * @param string $label A full path (including filename,) to a BarTender Label (*.xxx) file.
-	 * @return boolean True on success, Exception thrown on failure
-	 * @throws BarTenderException Thrown when $label is not a string
-	 */
+	
 	public function setLabel($label) {
 		if(!is_string($label)) {
 			throw new BarTenderException('Label passed must be a string, encountered `' . gettype($label) . '` instead');
@@ -43,16 +32,10 @@ class BarTender {
 		return True;
 	}
 
-	/**
-	 * @return string The label to be printed
-	 */
-	public function getLabel() {
-		return $this->label;
+	
 	}
 
-	/**
-	 * @return string The name of the printer to which the label will be sent to print.
-	 */
+	
 	public function getPrinter() {
 		return $this->printer;
 	}
